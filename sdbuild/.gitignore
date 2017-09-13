@@ -1,3 +1,4 @@
 .build
 .ccache
 rootfs.img
+tools/*
