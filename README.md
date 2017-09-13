@@ -1,3 +1,8 @@
+In this fork I'm trying to port the pynq platform to the microzed som 7010 with mfc carrier...
+<a href="http://zedboard.org/product/microzed" target="_blank">MicroZed webpage</a> >
+<a href="http://zedboard.org/product/microzed-fmc-carrier" target="_blank">MicroZed FMC carrier webpage</a> >
+
+
 ![alt tag](./logo.png)
 
 PYNQ is an open-source project from Xilinx that makes it easy to design embedded systems with Zynq All Programmable Systems on Chips (APSoCs). Using the Python language and libraries, designers can exploit the benefits of programmable logic and microprocessors in Zynq to build more capable and exciting embedded systems.
