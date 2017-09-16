@@ -4,8 +4,8 @@ BOOT_CONFIG_ABS = $(CURDIR)/${BOOT_CONFIG_DIR}
 LINUX_REPO ?= https://github.com/Xilinx/linux-xlnx.git
 LINUX_COMMIT ?= 4e93098735caeb862042d6bf601503666cdc0b69
 
-UBOOT_REPO ?= https://github.com/Digilent/u-boot-digilent.git
-UBOOT_COMMIT ?= e2382ceaffc0c36dc21c01576c1e454af0e01ca1
+UBOOT_REPO ?= https://github.com/Xilinx/u-boot-xlnx.git
+UBOOT_COMMIT ?= 0b94ce5ed4a6c2cd0fec7b8337e776b03e387347
 
 BOARD = MicroZed7010
 BOARD_PART = xc7z010clg400-1
@@ -14,6 +14,6 @@ BOARD_CONSTRAINTS ?= ${BOOT_CONFIG_ABS}/constraints.xdc
 
 LINUX_CONFIG ?= ${BOOT_CONFIG_ABS}/kernel.config
 UBOOT_CONFIG ?= ${BOOT_CONFIG_ABS}/u-boot.config
-BOARD_DTSI ?= ${BOOT_CONFIG_ABS}/pynq.dtsi
+BOARD_DTSI ?= ${BOOT_CONFIG_ABS}/microZed.dtsi
 BOOT_BITSTREAM ?= ${BOOT_CONFIG_ABS}/boot.bit
 include ${BOOT_CONFIG_DIR}/../common/Zynq7000.makefile

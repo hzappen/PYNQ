@@ -9,6 +9,8 @@ apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_ex
 source "$::env(PS_CONFIG_TCL)"
 set_property -dict [apply_preset $ps7] $ps7
 set_property -dict [list CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {142.86} CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {200} CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ {166.67} CONFIG.PCW_EN_CLK1_PORT {1} CONFIG.PCW_EN_CLK2_PORT {1} CONFIG.PCW_EN_CLK3_PORT {1}] $ps7
+connect_bd_net [get_bd_pins ps7/FCLK_CLK0] [get_bd_pins ps7/M_AXI_GP0_ACLK]
+connect_bd_net [get_bd_pins ps7/FCLK_CLK0] [get_bd_pins ps7/S_AXI_HP0_ACLK]
 add_files -norecurse [make_wrapper -files [get_files *.bd] -top]
 update_compile_order -fileset sources_1
 generate_target all [get_files  *.bd]
