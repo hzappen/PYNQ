@@ -36,8 +36,8 @@ __copyright__ = "Copyright 2016, Xilinx"
 __email__ = "pynq_support@xilinx.com"
 
 
-LEDS_OFFSET0 = 0x8
-LEDS_OFFSET1 = 0xC
+LEDS_OFFSET0 = 0x0
+LEDS_OFFSET1 = 0x0
 
 
 class LED(object):
@@ -65,7 +65,7 @@ class LED(object):
             
         self.index = index
         if LED._mmio is None:
-            base_addr = PL.ip_dict["swsleds_gpio"]["phys_addr"]
+            base_addr = PL.ip_dict["axi_gpio_0_led"]["phys_addr"]
             LED._mmio = MMIO(base_addr, 16)
         LED._mmio.write(LEDS_OFFSET1, 0x0)
 

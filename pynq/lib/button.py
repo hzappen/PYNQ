@@ -55,16 +55,16 @@ class Button(object):
         Parameters
         ----------
         index : int
-            The index of the push-buttons, from 0 to 3.
+            The index of the push-buttons, from 0 to 1.
 
         """
         if Button._mmio is None:
-            base_addr = PL.ip_dict["btns_gpio"]["phys_addr"]
+            base_addr = PL.ip_dict["axi_gpio_0_button"]["phys_addr"]
             Button._mmio = MMIO(base_addr, 512)
         self.index = index
         self.interrupt = None
         try:
-            self.interrupt = Interrupt('btns_gpio/ip2intc_irpt')
+            self.interrupt = Interrupt('axi_gpio_0_button/ip2intc_irpt')
             # Enable interrupts
             Button._mmio.write(0x11C, 0x80000000)
             Button._mmio.write(0x128, 0x00000001)
