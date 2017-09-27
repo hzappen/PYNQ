@@ -1,7 +1,8 @@
-In this fork I'm trying to port the pynq platform to the microzed som 7010 with mfc carrier...
-<a href="http://zedboard.org/product/microzed" target="_blank">MicroZed webpage</a> >
-<a href="http://zedboard.org/product/microzed-fmc-carrier" target="_blank">MicroZed FMC carrier webpage</a> >
-
+In this fork I've ported the pynq platform to the microzed som 7010 with mfc carrier...
+-	<a href="http://zedboard.org/product/microzed" target="_blank">MicroZed webpage</a> >
+-	<a href="http://zedboard.org/product/microzed-fmc-carrier" target="_blank">MicroZed FMC carrier webpage</a> >
+Of course I couldn't do it without the good support from the PYNQ group.
+The linux build is (or was at the moment I wrote this) working. Overlays are not yet disclosed.
 
 ![alt tag](./logo.png)
 
