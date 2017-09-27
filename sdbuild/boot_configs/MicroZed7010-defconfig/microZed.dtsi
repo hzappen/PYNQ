@@ -1,8 +1,8 @@
 
 / {
 	chosen {
-		bootargs = "console=ttyPS1,115200 root=/dev/mmcblk0p2 rw earlyprintk rootfstype=ext4 rootwait devtmpfs.mount=1 uio_pdrv_genirq.of_id=\"generic-uio\"";
-		linux,stdout-path = "/amba@0/serial@E0000000";
+		bootargs = "console=ttyPS0,115200 root=/dev/mmcblk0p2 rw earlyprintk rootfstype=ext4 rootwait devtmpfs.mount=1 uio_pdrv_genirq.of_id=\"generic-uio\"";
+		linux,stdout-path = "/amba@0/serial@E0001000";
 	};
 
 	amba {
@@ -12,6 +12,22 @@
 			reg = <0x40000000 0x10000>;
 			interrupt-parent = <&intc>;
 			interrupts = <0x0 0x1d 0x4>;
+		};
+		spi0: spi@e0006000 {
+			spidev@0 {
+			    compatible = "spidev";
+			    reg = <0x0>;
+			    spi-max-frequency = <25000000>;
+			    #address-cells = <1>;
+			    #size-cells = <1>; 
+			    }; 
+			spidev@1 {
+			    compatible = "spidev";
+			    reg = <0x1>;
+			    spi-max-frequency = <50000000>;
+			    #address-cells = <1>;
+			    #size-cells = <1>; 
+			    };
 		};
 
 	};
@@ -27,9 +43,8 @@
 		#phy-cells = <0>;
 		reg = <0xe0002000 0x1000>;
 		view-port = <0x170>;
-		drv-vbus;
+		drv-vbus;   
 	};
-   
 };
 
 &usb0 {
